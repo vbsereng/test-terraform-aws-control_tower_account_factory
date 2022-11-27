@@ -23,7 +23,7 @@ def lambda_handler(event: Dict[str, Any], context: Dict[str, Any]) -> LayerBuild
     session = Session()
     
     try:
-        print('GLOBANT:  ' + event["codebuild_project_name"] )        
+        print(event["codebuild_project_name"] )        
         client = session.client("codebuild")
 
         codebuild_project_name = event["codebuild_project_name"]
