@@ -21,9 +21,9 @@ class LayerBuildStatus(TypedDict):
 # Do not import  `aft_common` into this handler!
 def lambda_handler(event: Dict[str, Any], context: Dict[str, Any]) -> LayerBuildStatus:
     session = Session()
-    
+    print(event["codebuild_project_name"] )  
     try:
-        print(event["codebuild_project_name"] )        
+              
         client = session.client("codebuild")
 
         codebuild_project_name = event["codebuild_project_name"]
